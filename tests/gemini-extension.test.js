@@ -32,9 +32,9 @@ const GEMINI_AUTO_HOOKS = 'hooks/hooks.json';
 // Same load-bearing phrases asserted by scripts/check-rule-copies.js: the file
 // contextFileName points at must actually carry the rules, not just exist.
 const RULE_INVARIANTS = [
-  'lazy senior',
+  'simplest model that faithfully represents',
   'input validation at trust boundaries',
-  'naive heuristic',
+  'supported domain',
 ];
 
 function read(relPath) {
@@ -70,7 +70,7 @@ test('version stays aligned with the other plugin manifests', () => {
 test('contextFileName resolves to a file carrying the ponytail rules', () => {
   const manifest = loadManifest();
   assert.ok(manifest.contextFileName, 'contextFileName must be set so rules load every session');
-  const context = read(manifest.contextFileName);
+  const context = read(manifest.contextFileName).replace(/\s+/g, ' ');
   for (const phrase of RULE_INVARIANTS) {
     assert.ok(context.includes(phrase), `context file missing rule invariant: "${phrase}"`);
   }

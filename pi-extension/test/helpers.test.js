@@ -136,8 +136,9 @@ test("filterSkillBodyForMode keeps rule bullets that contain a colon", () => {
   // Regression: rule bullets outside the Intensity section (e.g. the
   // "No unrequested abstractions:" rule or the `ponytail:` comment convention)
   // contain a colon and must not be mistaken for mode-example lines.
-  const skillPath = new URL("../../skills/ponytail/SKILL.md", import.meta.url);
-  const body = readFileSync(skillPath, "utf8");
+  const body = '- No unrequested abstractions: a normal rule.\n' +
+    '- Mark deliberate simplifications that cut a real corner with a `ponytail:` comment naming the ceiling and upgrade path.\n' +
+    '- full: "`@lru_cache example"\n- lite: "Done example"\n- ultra: "No cache example"';
 
   const filtered = filterSkillBodyForMode(body, "full");
 

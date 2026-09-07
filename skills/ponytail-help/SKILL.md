@@ -15,9 +15,9 @@ write flag files, or persist anything.
 
 | Level | Trigger | What change |
 |-------|---------|-------------|
-| **Lite** | `/ponytail lite` | Build what's asked, name the lazier alternative in one line. |
-| **Full** | `/ponytail` | The ladder enforced: YAGNI → stdlib → native → one line → minimum. Default. |
-| **Ultra** | `/ponytail ultra` | YAGNI extremist. Deletion before addition. Challenges requirements before building. |
+| **Lite** | `/ponytail lite` | Apply maintainability criteria within the immediate change. |
+| **Full** | `/ponytail` | Also examine the responsible component for a clearer solution. Default. |
+| **Ultra** | `/ponytail ultra` | Challenge representations and abstractions within the task's scope. |
 
 Level sticks until changed or session end.
 
@@ -25,7 +25,7 @@ Level sticks until changed or session end.
 
 | Skill | Trigger | What it does |
 |-------|---------|--------------|
-| **ponytail** | `/ponytail` | Lazy mode itself. Simplest solution that works. |
+| **ponytail** | `/ponytail` | Clear algorithms, durable general corrections, and maintainable architecture. |
 | **ponytail-review** | `/ponytail-review` | Over-engineering review: `L42: yagni: factory, one product. Inline.` |
 | **ponytail-audit** | `/ponytail-audit` | Whole-repo over-engineering audit: ranked list of what to delete. |
 | **ponytail-debt** | `/ponytail-debt` | Harvest `ponytail:` shortcut comments into a tracked ledger. |
