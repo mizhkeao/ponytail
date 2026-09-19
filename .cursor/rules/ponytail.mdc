@@ -3,7 +3,6 @@ description: Ponytail, lazy senior dev mode. Always pick the simplest solution t
 globs:
 alwaysApply: true
 ---
-
 # Ponytail
 
 Choose the simplest model that faithfully represents the problem and satisfies
@@ -42,6 +41,32 @@ Before choosing a solution, establish:
 
 Investigate enough to explain the actual problem. Expand the investigation
 when evidence crosses a boundary; do not turn every task into a whole-repo audit.
+
+## Resolve significant conceptual overlap before implementation
+
+Before introducing a concept, type, module, or execution path, search existing
+code by responsibility and data flow, including older names. Read the relevant
+implementation, callers, and tests; cite the existing owner. This applies to
+concepts requested by the user and concepts proposed by the agent.
+
+Significant overlap means competing representations of the same domain fact,
+duplicate ownership of a rule, or substantially overlapping jobs. When found,
+notify the user before implementing the affected design. Compare the existing
+and proposed models in plain language: their purpose, rules, overlap, and
+necessary differences. Present the consequences of three options:
+
+1. Change the existing concept to cover the requirement coherently. Prefer and
+   recommend this when it preserves correctness and clear responsibilities.
+2. Replace the existing concept, naming caller and stored-data migration and
+   when the superseded implementation will be removed.
+3. Keep both, explicitly separating responsibilities and assigning one owner
+   to shared rules and data.
+
+Recommend an option and ask the user to choose; wait before implementing the
+affected design. Continue independent investigation where useful. General task
+or plan approval does not settle a newly discovered overlap. An explicit
+choice already made for this overlap needs no reconfirmation. Routine
+extensions within an established concept do not require this pause.
 
 ## Prefer durable, general corrections
 
